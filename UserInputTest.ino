@@ -1,10 +1,10 @@
 #define SERIAL_BAUDRATE 19200
 
-#define UI_INTERVAL 206
-#define UI_H 612
+#define UI_INTERVAL 200
+#define UI_H 712
 #define UI_HH UI_H + UI_INTERVAL
 //#define ai_HHH ai_HH + ai_INTERVAL
-#define UI_L 412
+#define UI_L 312
 #define UI_LL UI_L - UI_INTERVAL
 //#define ai_LLL ai_LL - ai_INTERVAL
 
@@ -64,7 +64,6 @@ void loop() {
   inputRead();
   delay(300);
   switch(inputState) {
-    
     case LowLow:
       value -= 3 ;
       break;
