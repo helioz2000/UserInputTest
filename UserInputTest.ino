@@ -1,11 +1,11 @@
 #define SERIAL_BAUDRATE 19200
 
-#define ai_INTERVAL 206
-#define ai_H 612
-#define ai_HH ai_H + ai_INTERVAL
+#define UI_INTERVAL 206
+#define UI_H 612
+#define UI_HH UI_H + UI_INTERVAL
 //#define ai_HHH ai_HH + ai_INTERVAL
-#define ai_L 412
-#define ai_LL ai_L - ai_INTERVAL
+#define UI_L 412
+#define UI_LL UI_L - UI_INTERVAL
 //#define ai_LLL ai_LL - ai_INTERVAL
 
 enum userinput {
@@ -37,8 +37,8 @@ void inputRead() {
   int  sensorValue = analogRead(sensorPin);
   //Serial.println(sensorValue);
 
-  if ( sensorValue > ai_H ) {
-    if ( sensorValue > ai_HH ) {
+  if ( sensorValue > UI_H ) {
+    if ( sensorValue > UI_HH ) {
       inputState = HighHigh;
       //Serial.println("++");
     } else {
@@ -46,8 +46,8 @@ void inputRead() {
       //Serial.println("+");
     }
   } else {
-    if ( sensorValue < ai_L ) {
-      if ( sensorValue < ai_LL ) {
+    if ( sensorValue < UI_L ) {
+      if ( sensorValue < UI_LL ) {
         inputState = LowLow;
         //Serial.println("--");
       } else {
@@ -83,13 +83,4 @@ void loop() {
 
   Serial.println(value);
 
-  
-  // turn the ledPin on
-  //digitalWrite(ledPin, HIGH);
-  // stop the program for <sensorValue> milliseconds:
-  //delay(sensorValue);
-  // turn the ledPin off:
-  //digitalWrite(ledPin, LOW);
-  // stop the program for for <sensorValue> milliseconds:
-  //delay(sensorValue);
 }
