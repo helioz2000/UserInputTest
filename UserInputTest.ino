@@ -62,24 +62,33 @@ void inputRead() {
 
 void loop() {
   inputRead();
-  delay(300);
-  switch(inputState) {
-    case LowLow:
-      value -= 3 ;
-      break;
+
+  switch (inputState) {
     case Low:
-      value-- ;
+    case LowLow:
+      value--;
       break;
     case High:
-      value++ ;
-      break;
     case HighHigh:
-      value += 3 ;
+      value++;
       break;
     default:
-    break;
+      break;
   }
-
+    
   Serial.println(value);
-
+  
+  // delay
+  switch (inputState) {
+    case Low:
+    case High:
+      delay(600);
+      break;
+    case LowLow:
+    case HighHigh:
+      delay(200);
+      break;
+    default:
+      break;
+  }
 }
