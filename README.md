@@ -1,8 +1,9 @@
 # UserInputTest
-Test potentiometer as a user nput device to adjust a value.
+
+Test potentiometer as a user input device to adjust a value.
 Arduino Nano with one potentiometer connected to Analog Input.
 
-In the absence of a rotary encoder type knob this alternative 
+In the absence of a rotary encoder adjustment this alternative 
 will provide the ability to adjust a value up/down.
 
 Middle: no action 
